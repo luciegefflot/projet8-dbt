@@ -1,0 +1,39 @@
+version: 2
+
+models:
+  - name: stg_students
+    description: "Nettoyage des étudiants, harmonisation du genre et calcul du parcours d'inscription."
+    columns:
+      - name: user_id
+        description: "Identifiant unique de l'étudiant (pseudonymisé)."
+        tests:
+          - not_null
+
+      - name: region
+        description: "Région de résidence (valeur 'Inconnu' si non renseignée)."
+        tests:
+          - not_null
+
+      - name: annee_inscription
+        description: "Année de l'inscription traitée sur la ligne."
+        tests:
+          - not_null
+
+      - name: genre
+        description: "Genre de l'étudiant harmonisé."
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['Homme', 'Femme', 'Non précisé', 'Autre']
+
+      - name: filiere
+        description: "Filière ou formation suivie par l'étudiant."
+
+      - name: tranche_age
+        description: "Tranche d'âge de l'étudiant."
+
+      - name: annee_premiere_inscription
+        description: "Toute première année d'inscription enregistrée pour cet étudiant."
+
+      - name: annee_derniere_inscription
+        description: "Année d'inscription la plus récente enregistrée pour cet étudiant."
