@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: mart_students_enriched
+    description: "Analyse du nombre d'étudiants par région croisée avec la population INSEE."
+    columns:
+      - name: region
+        description: "Nom de la région administrative française."
+        tests:
+          - not_null
+          - unique
+
+      - name: nb_etudiants
+        description: "Nombre total d'étudiants uniques inscrits dans la région."
+        tests:
+          - not_null
+
+      - name: population_totale
+        description: "Nombre d'habitants de la région d'après les données INSEE."
+
+      - name: taux_penetration_pour_100k_hab
+        description: "Nombre d'étudiants pour 100 000 habitants dans la région."

@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: int_students
+    description: "Données dédoublonnées selon la règle métier (une seule ligne par étudiant)"
+    columns:
+      - name: user_id
+        description: "Clé unique de l'étudiant"
+        tests:
+          - unique
+          - not_null
+      - name: annee_premiere_inscription
+        description: "Première année d'inscription"
+      - name: annee_derniere_inscription
+        description: "Dernière année d'inscription"

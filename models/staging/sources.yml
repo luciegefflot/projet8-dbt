@@ -1,0 +1,12 @@
+version: 2
+
+sources:
+  - name: raw
+    database: OPENCLASSROOMS_DB
+    schema: RAW
+    tables:
+      - name: raw_students
+        description: "Données brutes des étudiants et de leurs inscriptions."
+
+      - name: raw_insee_regions
+        description: "Données démographiques brutes de l'INSEE par région."
