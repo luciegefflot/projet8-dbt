@@ -25,8 +25,8 @@ renamed_and_calculated AS (
             ELSE 'Non précisé'
         END AS genre,
 
-        -- Remplacement des régions manquantes par "Inconnu"
-        COALESCE(region, 'Inconnu') AS region,
+        -- Nettoyage des espaces et remplacement des régions manquantes par "Inconnu"
+        COALESCE(TRIM(region), 'Inconnu') AS region,
         
         year_path_started AS annee_inscription,
 
